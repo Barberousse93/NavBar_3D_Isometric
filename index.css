@@ -91,6 +91,11 @@ body {
     text-shadow: 0 0 10px yellow, 0 0 20px #fff;
 }
 
+.container ul li:hover ion-icon {
+    color: yellow;
+    filter: drop-shadow(0 0 5px yellow) drop-shadow(0 0 20px #fff);
+}
+
 .container ul li span {
     display: block;
     position: absolute;
