@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --couleur: #555;
+}
+
+body {
+    background-color: #333;
+}
+
+.container {
+    background-color: #333;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+}
+
+.container ul {
+    width: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) skewY(-20deg);
+}
+
+.container ul li {
+    position: relative;
+    line-height: 70px;
+    background-color: var(--couleur);
+    list-style: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: 0.5s;
+    text-align: center;
+    z-index: calc(var(--z)*1);
+}
+
+.container ul li:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 100%;
+    background-color: var(--couleur);
+    filter: brightness(0.8);
+    left: -50px;
+    transform-origin: right;
+    transform: skewy(45deg);
+}
+
+.container ul li:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: var(--couleur);
+    filter: brightness(1.2);
+    left: 0;
+    top: -50px;
+    transform-origin: bottom;
+    transform: skewx(45deg);
+}
+
+.container ul li:hover {
+    transform: translateX(-50px);
+    background: var(--color);
+}
+
+.container ul li:hover:before {
+    background: var(--color);
+    filter: brightness(0.8)
+}
+
+.container ul li:hover:after {
+    background: var(--color);
+    filter: brightness(1.2)
+}
+
+.container ul li a {
+    font-size: 30px;
+    color: #bbb;
+    text-decoration: none;
+    transition: 1s;
+}
+
+.container ul li:hover a {
+    color: yellow;
+    text-shadow: 0 0 10px yellow, 0 0 20px #fff;
+}
+
+.container ul li span {
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 100%;
+    top: 10%;
+    filter: brightness(0.8);
+    left: -50px;
+    transform-origin: right;
+    transform: skewy(45deg);
+}
+
+.container ul li:last-child::after {
+    box-shadow: -100px 150px 40px 20px rgba(0, 0, 0, 0.5);
+}
